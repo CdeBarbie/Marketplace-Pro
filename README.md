@@ -33,53 +33,7 @@ This marketplace platform enables three distinct user roles:
 - **Version Control**: Git
 - **Database Tools**: MySQL Workbench
 
-## 📁 Project Structure
-
-\`\`\`
-MarketplaceProject/
-├── Controllers/           # MVC Controllers
-│   ├── HomeController.cs
-│   ├── AccountController.cs
-│   ├── CustomerController.cs
-│   ├── VendorController.cs
-│   ├── AdminController.cs
-│   └── CartController.cs
-├── Models/               # Data Models
-│   ├── User.cs
-│   ├── Product.cs
-│   ├── Order.cs
-│   ├── OrderItem.cs
-│   └── Cart.cs
-├── Services/             # Business Logic Layer
-│   ├── IUserService.cs
-│   ├── UserService.cs
-│   ├── IProductService.cs
-│   ├── ProductService.cs
-│   ├── IOrderService.cs
-│   ├── OrderService.cs
-│   ├── ICartService.cs
-│   └── CartService.cs
-├── ViewModels/           # View Models
-│   ├── LoginViewModel.cs
-│   ├── RegisterViewModel.cs
-│   └── CheckoutViewModel.cs
-├── Views/                # Razor Views
-│   ├── Home/
-│   ├── Account/
-│   ├── Customer/
-│   ├── Vendor/
-│   ├── Admin/
-│   ├── Cart/
-│   └── Shared/
-├── Data/                 # Database Context
-│   └── ApplicationDbContext.cs
-├── wwwroot/              # Static Files
-│   ├── css/
-│   ├── js/
-│   └── 
-└── 
-\`\`\`
-
+<pre><code> ## 📁 Project Structure ``` MarketplaceProject/ ├── Controllers/ # MVC Controllers │ ├── HomeController.cs │ ├── AccountController.cs │ ├── CustomerController.cs │ ├── VendorController.cs │ ├── AdminController.cs │ └── CartController.cs ├── Models/ # Data Models │ ├── User.cs │ ├── Product.cs │ ├── Order.cs │ ├── OrderItem.cs │ └── Cart.cs ├── Services/ # Business Logic Layer │ ├── IUserService.cs │ ├── UserService.cs │ ├── IProductService.cs │ ├── ProductService.cs │ ├── IOrderService.cs │ ├── OrderService.cs │ ├── ICartService.cs │ └── CartService.cs ├── ViewModels/ # View Models │ ├── LoginViewModel.cs │ ├── RegisterViewModel.cs │ └── CheckoutViewModel.cs ├── Views/ # Razor Views │ ├── Home/ │ ├── Account/ │ ├── Customer/ │ ├── Vendor/ │ ├── Admin/ │ ├── Cart/ │ └── Shared/ ├── Data/ # Database Context │ └── ApplicationDbContext.cs ├── wwwroot/ # Static Files │ ├── css/ │ ├── js/ │ └── images/ ``` </code></pre>
 ## 🗄️ Database Schema
 
 ### Core Tables
