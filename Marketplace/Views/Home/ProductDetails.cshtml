@@ -1,0 +1,204 @@
+﻿@model MarketPlace.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home", new { categoryId = Model.CategoryId })">@Model.Category.Name</a></li>
+                <li class="breadcrumb-item active">@Model.Name</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- Product Image -->
+        <div class="card">
+            <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/placeholder-product.jpg" : Model.ImageUrl)"
+                 class="card-img-top" alt="@Model.Name" style="height: 400px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <!-- Product Information -->
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">@Model.Name</h1>
+
+                <!-- Rating -->
+                @if (Model.Reviews.Any())
+                {
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                <i class="fas fa-star @(i <= Model.AverageRating ? "text-warning" : "text-muted")"></i>
+                            }
+                            <span class="ms-2">@Model.AverageRating.ToString("F1") (@Model.ReviewCount reviews)</span>
+                        </div>
+                    </div>
+                }
+
+                <!-- Price -->
+                <div class="mb-3">
+                    <h2 class="text-success">@Model.Price.ToString("C")</h2>
+                </div>
+
+                <!-- Stock Status -->
+                <div class="mb-3">
+                    @if (Model.StockQuantity > 0)
+                    {
+                        <span class="badge bg-success fs-6">
+                            <i class="fas fa-check"></i> In Stock (@Model.StockQuantity available)
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger fs-6">
+                            <i class="fas fa-times"></i> Out of Stock
+                        </span>
+                    }
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <h5>Description</h5>
+                    <p class="text-muted">@Model.Description</p>
+                </div>
+
+                <!-- Vendor Information -->
+                <div class="mb-4">
+                    <h6>Sold by</h6>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-store me-2 text-primary"></i>
+                        <strong>@Model.Vendor.BusinessName</strong>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Vendor.BusinessDescription))
+                    {
+                        <small class="text-muted">@Model.Vendor.BusinessDescription</small>
+                    }
+                </div>
+
+                <!-- Add to Cart -->
+                @if (User.IsInRole("Customer"))
+                {
+                    @if (Model.StockQuantity > 0)
+                    {
+                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="mb-3">
+                            <input type="hidden" name="productId" value="@Model.ProductId" />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="quantity" class="form-label">Quantity</label>
+                                    <select name="quantity" id="quantity" class="form-select">
+                                        @for (int i = 1; i <= Math.Min(10, Model.StockQuantity); i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-8 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary btn-lg w-100" disabled>
+                            <i class="fas fa-times"></i> Out of Stock
+                        </button>
+                    }
+                }
+                else if (!User.Identity.IsAuthenticated)
+                {
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt"></i> Login to Purchase
+                        </a>
+                        <a href="@Url.Action("Register", "Account")" class="btn btn-outline-primary">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </a>
+                    </div>
+                }
+
+                <!-- Product Details -->
+                <div class="mt-4">
+                    <h6>Product Details</h6>
+                    <ul class="list-unstyled">
+                        <li><strong>Category:</strong> @Model.Category.Name</li>
+                        <li><strong>Product ID:</strong> #@Model.ProductId</li>
+                        <li><strong>Listed:</strong> @Model.CreatedAt.ToString("MMM dd, yyyy")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reviews Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5><i class="fas fa-star"></i> Customer Reviews</h5>
+                @if (User.IsInRole("Customer"))
+                {
+                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                        <i class="fas fa-plus"></i> Write Review
+                    </button>
+                }
+            </div>
+            <div class="card-body">
+                @if (Model.Reviews.Any())
+                {
+                    @foreach (var review in Model.Reviews.OrderByDescending(r => r.ReviewDate))
+                    {
+                        <div class="border-bottom pb-3 mb-3">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <i class="fas fa-star @(i <= review.Rating ? "text-warning" : "text-muted")"></i>
+                                        }
+                                        <strong class="ms-2">@review.Customer.User.Username</strong>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(review.Comment))
+                                    {
+                                        <p class="mb-1">@review.Comment</p>
+                                    }
+                                </div>
+                                <small class="text-muted">@review.ReviewDate.ToString("MMM dd, yyyy")</small>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-4">
+                        <i class="fas fa-star fa-3x text-muted mb-3"></i>
+                        <h6 class="text-muted">No reviews yet</h6>
+                        <p class="text-muted">Be the first to review this product!</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Related Products -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h4>Related Products</h4>
+        <p class="text-muted">More products from @Model.Vendor.BusinessName</p>
+        <!-- This would be populated with related products -->
+    </div>
+</div>

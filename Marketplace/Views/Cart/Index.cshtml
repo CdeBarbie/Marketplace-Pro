@@ -1,0 +1,140 @@
+﻿@model IEnumerable<MarketPlace.ViewModels.CartItemViewModel>
+
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-shopping-cart"></i> Shopping Cart</h4>
+            </div>
+            <div class="card-body">
+                @if (Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="row cart-item-row mb-3 p-3 border rounded" data-product-id="@item.ProductId">
+                            <div class="col-md-2">
+                                <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/images/placeholder-product.jpg" : item.ImageUrl)"
+                                     class="img-fluid rounded" alt="@item.ProductName" style="height: 80px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-4">
+                                <h6>@item.ProductName</h6>
+                                <small class="text-muted">@item.Description</small>
+                                <br>
+                                <small class="text-muted">Sold by: @item.VendorName</small>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="item-price">@item.Price.ToString("C")</span>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group input-group-sm">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(@item.ProductId, @item.Quantity - 1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" class="form-control text-center quantity-input" value="@item.Quantity" min="1"
+                                           onchange="updateQuantity(@item.ProductId, this.value)" data-product-id="@item.ProductId">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(@item.ProductId, @item.Quantity + 1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2 text-end">
+                                <div class="item-total">@item.Subtotal.ToString("C")</div>
+                                <button class="btn btn-sm btn-outline-danger mt-1" onclick="removeFromCart(@item.ProductId)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted">Your cart is empty</h5>
+                        <p class="text-muted">Add some products to get started!</p>
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i> Continue Shopping
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Order Summary</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">@Model.Sum(i => i.Subtotal).ToString("C")</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Tax (8%):</span>
+                    <span id="cart-tax">@((Model.Sum(i => i.Subtotal) * 0.08m).ToString("C"))</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total:</strong>
+                    <strong id="cart-total">@((Model.Sum(i => i.Subtotal) * 1.08m).ToString("C"))</strong>
+                </div>
+
+                @if (Model.Any())
+                {
+                    <a href="@Url.Action("Checkout", "Cart")" class="btn btn-success w-100">
+                        <i class="fas fa-credit-card"></i> Proceed to Checkout
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateQuantity(productId, quantity) {
+            if (quantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            fetch('@Url.Action("UpdateQuantity", "Cart")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                body: `productId=${productId}&quantity=${quantity}`
+            })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    }
+                });
+        }
+
+        function removeFromCart(productId) {
+            if (confirm('Are you sure you want to remove this item?')) {
+                fetch('@Url.Action("RemoveFromCart", "Cart")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    body: `productId=${productId}`
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            location.reload();
+                        }
+                    });
+            }
+        }
+    </script>
+}

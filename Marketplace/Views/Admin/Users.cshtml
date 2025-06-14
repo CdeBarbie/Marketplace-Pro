@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MarketPlace.Models.User>
+
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-users"></i> User Management</h2>
+        <p class="text-muted">Manage all platform users</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>All Users</h5>
+        <div>
+            <span class="badge bg-primary">@Model.Count() Total Users</span>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.UserId</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-circle me-2 text-muted"></i>
+                                    <strong>@user.Username</strong>
+                                </div>
+                            </td>
+                            <td>@user.Email</td>
+                            <td>
+                                <span class="badge bg-@(user.Role == MarketPlace.Models.UserRole.Admin ? "danger" :
+                                                       user.Role == MarketPlace.Models.UserRole.Vendor ? "info" : "success")">
+                                    @user.Role
+                                </span>
+                            </td>
+                            <td>
+                                <span class="badge bg-@(user.Status == MarketPlace.Models.UserStatus.Active ? "success" :
+                                                       user.Status == MarketPlace.Models.UserStatus.Suspended ? "danger" : "warning")">
+                                    @user.Status
+                                </span>
+                            </td>
+                            <td>@user.CreatedAt.ToString("MMM dd, yyyy")</td>
+                            <td>
+                                @if (user.Role != MarketPlace.Models.UserRole.Admin)
+                                {
+                                    @if (user.Status == MarketPlace.Models.UserStatus.Active)
+                                    {
+                                        <form asp-action="SuspendUser" method="post" class="d-inline">
+                                            <input type="hidden" name="userId" value="@user.UserId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Are you sure you want to suspend this user?')">
+                                                <i class="fas fa-ban"></i> Suspend
+                                            </button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <form asp-action="ActivateUser" method="post" class="d-inline">
+                                            <input type="hidden" name="userId" value="@user.UserId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-success">
+                                                <i class="fas fa-check"></i> Activate
+                                            </button>
+                                        </form>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Admin</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

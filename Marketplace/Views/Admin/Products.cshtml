@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MarketPlace.Models.Product>
+
+@{
+    ViewData["Title"] = "Product Management";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-box"></i> Product Management</h2>
+        <p class="text-muted">Monitor and manage all products on the platform</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>All Products</h5>
+        <div>
+            <span class="badge bg-warning">@Model.Count(p => p.Status == MarketPlace.Models.ProductStatus.Pending) Pending</span>
+            <span class="badge bg-success">@Model.Count(p => p.Status == MarketPlace.Models.ProductStatus.Active) Active</span>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Vendor</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr class="@(product.Status == MarketPlace.Models.ProductStatus.Pending ? "table-warning" : "")">
+                            <td>@product.ProductId</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="@(string.IsNullOrEmpty(product.ImageUrl) ? "/images/placeholder-product.jpg" : product.ImageUrl)"
+                                         class="rounded me-2" style="width: 40px; height: 40px; object-fit: cover;" alt="@product.Name">
+                                    <div>
+                                        <strong>@product.Name</strong>
+                                        <br>
+                                        <small class="text-muted">@product.Description.Substring(0, Math.Min(50, product.Description.Length))...</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@product.Vendor.BusinessName</td>
+                            <td>@product.Category.Name</td>
+                            <td>@product.Price.ToString("C")</td>
+                            <td>
+                                <span class="badge bg-@(product.StockQuantity > 10 ? "success" : product.StockQuantity > 0 ? "warning" : "danger")">
+                                    @product.StockQuantity
+                                </span>
+                            </td>
+                            <td>
+                                <span class="badge bg-@(product.Status == MarketPlace.Models.ProductStatus.Active ? "success" :
+                                                       product.Status == MarketPlace.Models.ProductStatus.Pending ? "warning" : "secondary")">
+                                    @product.Status
+                                </span>
+                            </td>
+                            <td>
+                                @if (product.Status == MarketPlace.Models.ProductStatus.Pending)
+                                {
+                                    <form asp-action="ApproveProduct" method="post" class="d-inline">
+                                        <input type="hidden" name="productId" value="@product.ProductId" />
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
+                                    </form>
+                                }
+                                <a href="@Url.Action("ProductDetails", "Home", new { id = product.ProductId })"
+                                   class="btn btn-sm btn-outline-primary" target="_blank">
+                                    <i class="fas fa-eye"></i> View
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

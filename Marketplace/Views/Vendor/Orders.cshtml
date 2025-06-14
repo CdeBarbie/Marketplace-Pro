@@ -1,0 +1,209 @@
+﻿@model IEnumerable<MarketPlace.Models.Order>
+
+@{
+    ViewData["Title"] = "Sales & Orders";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-shopping-bag"></i> Sales & Orders</h2>
+        <p class="text-muted">Track your sales and manage customer orders</p>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>@Model.Count()</h4>
+                        <p class="mb-0">Total Orders</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>@Model.Sum(o => o.TotalAmount).ToString("C")</h4>
+                        <p class="mb-0">Total Revenue</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-dollar-sign fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-info text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>@Model.Count(o => o.Status == MarketPlace.Models.OrderStatus.Processing)</h4>
+                        <p class="mb-0">Processing</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h4>@Model.Count(o => o.Status == MarketPlace.Models.OrderStatus.Delivered)</h4>
+                        <p class="mb-0">Completed</p>
+                    </div>
+                    <div class="align-self-center">
+                        <i class="fas fa-check-circle fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Orders Table -->
+<div class="card">
+    <div class="card-header">
+        <h5>Recent Orders</h5>
+    </div>
+    <div class="card-body">
+        @if (Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Order #</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model)
+                        {
+                            <tr>
+                                <td><strong>#@order.OrderId</strong></td>
+                                <td>
+                                    <div>
+                                        <strong>@order.Customer.User.Username</strong>
+                                        <br>
+                                        <small class="text-muted">@order.Customer.User.Email</small>
+                                    </div>
+                                </td>
+                                <td>@order.OrderDate.ToString("MMM dd, yyyy")</td>
+                                <td>
+                                    <span class="badge bg-secondary">@order.OrderItems.Count items</span>
+                                </td>
+                                <td><strong>@order.TotalAmount.ToString("C")</strong></td>
+                                <td>
+                                    <span class="badge bg-@(order.Status == MarketPlace.Models.OrderStatus.Delivered ? "success" :
+                                                           order.Status == MarketPlace.Models.OrderStatus.Shipped ? "info" :
+                                                           order.Status == MarketPlace.Models.OrderStatus.Processing ? "warning" : "secondary")">
+                                        @order.Status
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#orderModal@(order.OrderId)">
+                                        <i class="fas fa-eye"></i> View
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-bag fa-3x text-muted mb-3"></i>
+                <h5 class="text-muted">No orders yet</h5>
+                <p class="text-muted">Orders will appear here when customers purchase your products.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Order Details Modals -->
+@foreach (var order in Model)
+{
+    <div class="modal fade" id="orderModal@(order.OrderId)" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order #@order.OrderId Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Customer:</strong> @order.Customer.User.Username<br>
+                            <strong>Email:</strong> @order.Customer.User.Email<br>
+                            <strong>Phone:</strong> @order.Customer.PhoneNumber
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Order Date:</strong> @order.OrderDate.ToString("MMM dd, yyyy HH:mm")<br>
+                            <strong>Status:</strong>
+                            <span class="badge bg-@(order.Status == MarketPlace.Models.OrderStatus.Delivered ? "success" :
+                                                   order.Status == MarketPlace.Models.OrderStatus.Shipped ? "info" :
+                                                   order.Status == MarketPlace.Models.OrderStatus.Processing ? "warning" : "secondary")">
+                                @order.Status
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Shipping Address:</strong><br>
+                        @order.ShippingAddress
+                    </div>
+
+                    <h6>Your Items in this Order:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in order.OrderItems)
+                                {
+                                    <tr>
+                                        <td>@item.Product.Name</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.Price.ToString("C")</td>
+                                        <td>@item.Subtotal.ToString("C")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

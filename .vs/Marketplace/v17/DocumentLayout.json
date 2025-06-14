@@ -1,0 +1,390 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\admin\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\admin\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\vendor\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\vendor\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\vendor\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\vendor\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\vendor\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\vendor\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\customer\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\customer\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\customer\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\views\\vendor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\views\\vendor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|c:\\users\\luzuko\\source\\repos\\marketplace\\marketplace\\migrations\\20250612162721_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2174664-DDA7-4632-81B3-EB54AEC26FEE}|Marketplace\\Marketplace.csproj|solutionrelative:marketplace\\migrations\\20250612162721_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Marketplace\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAmwDIAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T20:31:20.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAAL8AAAAAAAAAAAAkwM8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:08:29.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Home\\ProductDetails.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Home\\ProductDetails.cshtml",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAqwMwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:03:06.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Cart\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Cart\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Cart\\Checkout.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Cart\\Checkout.cshtml",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAqwLAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:02:08.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Marketplace\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAABAAAAAAAAAAAuwAsBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T15:19:45.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Services\\ProductService.cs",
+              "RelativeToolTip": "Marketplace\\Services\\ProductService.cs",
+              "ViewState": "AQIAAAsBAAAAAAAAAAAuwC0BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T20:34:04.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Vendor\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Orders.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Vendor\\Orders.cshtml",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAqwMcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:03:54.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VendorController.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\VendorController.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Controllers\\VendorController.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\VendorController.cs",
+              "RelativeToolTip": "Marketplace\\Controllers\\VendorController.cs",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAuwLkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:56:49.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Admin\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Admin\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Admin\\Orders.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Admin\\Orders.cshtml",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAKwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:08:46.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\AddProduct.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Vendor\\AddProduct.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\AddProduct.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Vendor\\AddProduct.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAqwIQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:00:55.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Products.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Products.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Vendor\\Products.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Products.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Vendor\\Products.cshtml",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAqwGYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T19:00:04.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Customer\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Customer\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Customer\\Orders.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Customer\\Orders.cshtml",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAqwHYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T18:58:27.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Marketplace\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAuwJEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T18:53:17.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Customer\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Customer\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Customer\\Dashboard.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Customer\\Dashboard.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAHkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T16:55:45.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Marketplace\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAuwEIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:54:20.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AQIAADQAAAAAAAAAAAAqwIwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T16:53:09.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAwJ8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T16:51:53.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAIoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T15:32:30.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Marketplace\\Views\\Vendor\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Views\\Vendor\\Dashboard.cshtml",
+              "RelativeToolTip": "Marketplace\\Views\\Vendor\\Dashboard.cshtml",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAwwLAAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T16:57:44.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250612162721_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Migrations\\20250612162721_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Migrations\\20250612162721_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Migrations\\20250612162721_InitialCreate.cs",
+              "RelativeToolTip": "Marketplace\\Migrations\\20250612162721_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:27:22.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Program.cs",
+              "RelativeDocumentMoniker": "Marketplace\\Program.cs",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\Program.cs",
+              "RelativeToolTip": "Marketplace\\Program.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAADwv04AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T14:38:28.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\appsettings.json",
+              "RelativeDocumentMoniker": "Marketplace\\appsettings.json",
+              "ToolTip": "C:\\Users\\Luzuko\\source\\repos\\Marketplace\\Marketplace\\appsettings.json",
+              "RelativeToolTip": "Marketplace\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-12T14:58:42.77Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

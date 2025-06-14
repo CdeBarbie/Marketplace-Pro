@@ -1,0 +1,176 @@
+﻿@model MarketPlace.ViewModels.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-credit-card"></i> Checkout</h2>
+        <p class="text-muted">Review your order and complete your purchase</p>
+    </div>
+</div>
+
+<form asp-action="ProcessCheckout" method="post">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Order Summary -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-shopping-cart"></i> Order Summary</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <div class="row align-items-center mb-3 pb-3 border-bottom">
+                            <div class="col-md-2">
+                                <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/images/placeholder-product.jpg" : item.ImageUrl)"
+                                     class="img-fluid rounded" alt="@item.ProductName" style="height: 60px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <h6>@item.ProductName</h6>
+                                <small class="text-muted">Sold by: @item.VendorName</small>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <span>Qty: @item.Quantity</span>
+                            </div>
+                            <div class="col-md-2 text-end">
+                                <strong>@item.Subtotal.ToString("C")</strong>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-truck"></i> Shipping Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label asp-for="ShippingAddress" class="form-label">Shipping Address *</label>
+                        <textarea asp-for="ShippingAddress" class="form-control" rows="3"
+                                  placeholder="Enter your complete shipping address"></textarea>
+                        <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-credit-card"></i> Payment Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label asp-for="PaymentMethod" class="form-label">Payment Method *</label>
+                        <select asp-for="PaymentMethod" class="form-select" id="paymentMethodSelect">
+                            <option value="">Select Payment Method</option>
+                            <option value="CreditCard">Credit Card</option>
+                            <option value="DebitCard">Debit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="BankTransfer">Bank Transfer</option>
+                        </select>
+                        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                    </div>
+
+                    <div id="cardDetails" style="display: none;">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label asp-for="CardNumber" class="form-label">Card Number</label>
+                                <input asp-for="CardNumber" class="form-control" placeholder="1234 5678 9012 3456" />
+                                <span asp-validation-for="CardNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="ExpiryDate" class="form-label">Expiry Date</label>
+                                <input asp-for="ExpiryDate" class="form-control" placeholder="MM/YY" />
+                                <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="CVV" class="form-label">CVV</label>
+                                <input asp-for="CVV" class="form-control" placeholder="123" />
+                                <span asp-validation-for="CVV" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="CardholderName" class="form-label">Cardholder Name</label>
+                            <input asp-for="CardholderName" class="form-control" placeholder="John Doe" />
+                            <span asp-validation-for="CardholderName" class="text-danger"></span>
+                        </div>                            <span asp-validation-for="CardholderName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <!-- Order Total -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5><i class="fas fa-calculator"></i> Order Total</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span>@Model.TotalAmount.ToString("C")</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Tax (8%):</span>
+                    <span>@Model.TaxAmount.ToString("C")</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Shipping:</span>
+                    <span class="text-success">FREE</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total:</strong>
+                    <strong class="text-success">@Model.GrandTotal.ToString("C")</strong>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-lock"></i> Place Order
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                    <h6>Secure Checkout</h6>
+                    <p class="text-muted small">
+                        Your payment information is encrypted and secure.
+                        We never store your credit card details.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.getElementById('paymentMethodSelect').addEventListener('change', function () {
+            const cardDetails = document.getElementById('cardDetails');
+            const selectedMethod = this.value;
+
+            if (selectedMethod === 'CreditCard' || selectedMethod === 'DebitCard') {
+                cardDetails.style.display = 'block';
+            } else {
+                cardDetails.style.display = 'none';
+            }
+        });
+    </script>
+}
